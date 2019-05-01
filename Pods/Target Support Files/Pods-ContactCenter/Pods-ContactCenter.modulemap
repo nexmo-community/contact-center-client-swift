@@ -1,0 +1,6 @@
+framework module Pods_ContactCenter {
+  umbrella header "Pods-ContactCenter-umbrella.h"
+
+  export *
+  module * { export * }
+}
