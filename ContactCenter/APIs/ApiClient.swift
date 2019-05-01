@@ -53,7 +53,7 @@ final class ApiClient {
     
     // Token for user
     
-    func tokenFor(userName: String, sucessResponse: @escaping (String, String, String, String) -> Void, errorResponse: @escaping (Error) -> Void) {
+    func tokenFor(userName: String, sucessResponse: @escaping (NexmoUser) -> Void, errorResponse: @escaping (Error) -> Void) {
         guard let request = httpRequest(url: "\(Constant.apiServerURL)/api/jwt", params: ["user_name": userName, "mobile_api_key": Constant.apiKey]) else {
             return
         }
@@ -63,8 +63,8 @@ final class ApiClient {
                 return
             }
             
-            if let userId = json["user_id"] as? String, let userName = json["user_name"] as? String, let token = json["jwt"] as? String, let expiryDate = json["expires_at"] as? String {
-                sucessResponse(userId, userName, token, expiryDate)
+            if let user = try? NexmoUser(json: json) {
+                sucessResponse(user)
             } else {
                 errorResponse(ApiError.InvalidResponse)
             }

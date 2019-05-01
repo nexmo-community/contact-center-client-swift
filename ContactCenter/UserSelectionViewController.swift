@@ -55,13 +55,13 @@ class UserSelectionViewController: UIViewController {
         loginJaneButton.alpha = 0
         loginJoeButton.alpha = 0
         
-        ApiClient.shared.tokenFor(userName: userName, sucessResponse: { [weak self] (userName, userId, token, expiryDate) in
+        ApiClient.shared.tokenFor(userName: userName, sucessResponse: { [weak self] (user) in
             // token retrieved
-            print(" 🎟🎟🎟 TOKEN RETRIEVED: \(token)")
+            print(" 🎟🎟🎟 TOKEN RETRIEVED: \(user.token)")
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.activityLabel.text = "Token retrieved"
-                self.performSegue(withIdentifier: "showMain", sender: token)
+                self.performSegue(withIdentifier: "showMain", sender: user)
             }
         }) { (error) in
             // token error
@@ -87,8 +87,8 @@ class UserSelectionViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMain", let destination = segue.destination as? MainViewController, let token = sender as? String {
-            destination.token = token
+        if segue.identifier == "showMain", let destination = segue.destination as? MainViewController, let user = sender as? NexmoUser {
+            destination.user = user
             destination.userSelectionVC = self
         }
     }

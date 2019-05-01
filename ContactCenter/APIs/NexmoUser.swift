@@ -18,16 +18,26 @@ enum SerializationError: Error {
 struct NexmoUser: Comparable {
     var id: String
     var name: String
+    var token: String
+    var tokenExpiryDate: String
     
     init(json: [String: Any]) throws {
         guard let user_id = json["user_id"] as? String else {
-            throw SerializationError.missing("user_id")
+            throw SerializationError.missing("id")
         }
         guard let user_name = json["user_name"] as? String else {
-            throw SerializationError.missing("user_name")
+            throw SerializationError.missing("name")
+        }
+        guard let token = json["jwt"] as? String else {
+            throw SerializationError.missing("token")
+        }
+        guard let tokenExpiryDate = json["expires_at"] as? String else {
+            throw SerializationError.missing("tokenExpiryDate")
         }
         self.id = user_id
         self.name = user_name
+        self.token = token
+        self.tokenExpiryDate = tokenExpiryDate
     }
     
     

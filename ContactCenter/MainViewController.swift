@@ -16,14 +16,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var activityLabel: UILabel!
     
     weak var userSelectionVC: UserSelectionViewController?
-    var token: String!
+    var user: NexmoUser!
     var client: NXMClient!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(cancel))
         
-        client = NXMClient(token: token)
+        client = NXMClient(token: user.token)
         client.setDelegate(self)
         client.login()
     }
