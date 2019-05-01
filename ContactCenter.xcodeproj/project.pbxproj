@@ -8,21 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		12D0ACF32279EDF3009D1CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */; };
-		12D0ACF52279EDF3009D1CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0ACF42279EDF3009D1CF7 /* ViewController.swift */; };
 		12D0ACF82279EDF3009D1CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D0ACF62279EDF3009D1CF7 /* Main.storyboard */; };
 		12D0ACFA2279EDF3009D1CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12D0ACF92279EDF3009D1CF7 /* Assets.xcassets */; };
 		12D0ACFD2279EDF3009D1CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D0ACFB2279EDF3009D1CF7 /* LaunchScreen.storyboard */; };
+		12D0AD082279F11C009D1CF7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD052279F11C009D1CF7 /* ApiClient.swift */; };
+		12D0AD092279F11C009D1CF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD062279F11C009D1CF7 /* Constants.swift */; };
+		12D0AD0A2279F11C009D1CF7 /* NexmoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD072279F11C009D1CF7 /* NexmoUser.swift */; };
+		12D0AD0C2279F200009D1CF7 /* UserSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD0B2279F200009D1CF7 /* UserSelectionViewController.swift */; };
+		12D0AD0E2279F4AB009D1CF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD0D2279F4AB009D1CF7 /* MainViewController.swift */; };
+		12D0AD102279FB96009D1CF7 /* NexmoClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AD0F2279FB96009D1CF7 /* NexmoClientExtensions.swift */; };
 		740C534202487308872E8D13 /* Pods_ContactCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFB53C4CA162FFD772D2CA8 /* Pods_ContactCenter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12D0ACEF2279EDF3009D1CF7 /* ContactCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		12D0ACF42279EDF3009D1CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12D0ACF72279EDF3009D1CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12D0ACF92279EDF3009D1CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12D0ACFC2279EDF3009D1CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D0ACFE2279EDF3009D1CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12D0AD052279F11C009D1CF7 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		12D0AD062279F11C009D1CF7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		12D0AD072279F11C009D1CF7 /* NexmoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NexmoUser.swift; sourceTree = "<group>"; };
+		12D0AD0B2279F200009D1CF7 /* UserSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectionViewController.swift; sourceTree = "<group>"; };
+		12D0AD0D2279F4AB009D1CF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		12D0AD0F2279FB96009D1CF7 /* NexmoClientExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NexmoClientExtensions.swift; sourceTree = "<group>"; };
 		1FFB53C4CA162FFD772D2CA8 /* Pods_ContactCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9E86656A1C50756264B80D /* Pods-ContactCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactCenter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactCenter/Pods-ContactCenter.debug.xcconfig"; sourceTree = "<group>"; };
 		A1E3133E52006410E0BC061E /* Pods-ContactCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactCenter/Pods-ContactCenter.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,14 +71,27 @@
 		12D0ACF12279EDF3009D1CF7 /* ContactCenter */ = {
 			isa = PBXGroup;
 			children = (
-				12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */,
-				12D0ACF42279EDF3009D1CF7 /* ViewController.swift */,
-				12D0ACF62279EDF3009D1CF7 /* Main.storyboard */,
+				12D0AD062279F11C009D1CF7 /* Constants.swift */,
+				12D0ACFE2279EDF3009D1CF7 /* Info.plist */,
 				12D0ACF92279EDF3009D1CF7 /* Assets.xcassets */,
 				12D0ACFB2279EDF3009D1CF7 /* LaunchScreen.storyboard */,
-				12D0ACFE2279EDF3009D1CF7 /* Info.plist */,
+				12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */,
+				12D0ACF62279EDF3009D1CF7 /* Main.storyboard */,
+				12D0AD0F2279FB96009D1CF7 /* NexmoClientExtensions.swift */,
+				12D0AD0B2279F200009D1CF7 /* UserSelectionViewController.swift */,
+				12D0AD0D2279F4AB009D1CF7 /* MainViewController.swift */,
+				12D0AD042279F106009D1CF7 /* APIs */,
 			);
 			path = ContactCenter;
+			sourceTree = "<group>";
+		};
+		12D0AD042279F106009D1CF7 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				12D0AD052279F11C009D1CF7 /* ApiClient.swift */,
+				12D0AD072279F11C009D1CF7 /* NexmoUser.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 		74FAA61A7B635F6E1000DA11 /* Pods */ = {
@@ -208,8 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D0ACF52279EDF3009D1CF7 /* ViewController.swift in Sources */,
 				12D0ACF32279EDF3009D1CF7 /* AppDelegate.swift in Sources */,
+				12D0AD0A2279F11C009D1CF7 /* NexmoUser.swift in Sources */,
+				12D0AD082279F11C009D1CF7 /* ApiClient.swift in Sources */,
+				12D0AD0E2279F4AB009D1CF7 /* MainViewController.swift in Sources */,
+				12D0AD092279F11C009D1CF7 /* Constants.swift in Sources */,
+				12D0AD102279FB96009D1CF7 /* NexmoClientExtensions.swift in Sources */,
+				12D0AD0C2279F200009D1CF7 /* UserSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
