@@ -118,22 +118,41 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5R-7x-siw">
+                                <rect key="frame" x="24" y="818" width="366" height="44"/>
+                                <color key="backgroundColor" red="0.2091954714" green="0.64987062039999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MlH-LT-eid"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Call Phone">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="callPhone:" destination="xMd-c0-3QQ" eventType="touchUpInside" id="BWQ-Cy-xix"/>
+                                    <action selector="logInAsJane:" destination="BYZ-38-t0r" eventType="touchUpInside" id="19E-Rm-DAF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.077612601219999994" green="0.22332888840000001" blue="0.34157556300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rmH-0B-PBX" firstAttribute="centerX" secondItem="pgV-jE-Ux5" secondAttribute="centerX" id="2U8-gE-eDR"/>
                             <constraint firstItem="ylN-OZ-h3v" firstAttribute="top" secondItem="pgV-jE-Ux5" secondAttribute="top" id="44K-MV-d2M"/>
+                            <constraint firstItem="F5R-7x-siw" firstAttribute="leading" secondItem="pgV-jE-Ux5" secondAttribute="leading" constant="24" id="97A-9j-s3d"/>
                             <constraint firstItem="xec-Vr-0ce" firstAttribute="top" secondItem="rmH-0B-PBX" secondAttribute="bottom" constant="12" id="Iut-jN-NcM"/>
                             <constraint firstItem="xec-Vr-0ce" firstAttribute="leading" secondItem="pgV-jE-Ux5" secondAttribute="leading" constant="40" id="N5S-aJ-8Qw"/>
                             <constraint firstItem="xec-Vr-0ce" firstAttribute="centerY" secondItem="pgV-jE-Ux5" secondAttribute="centerY" id="PJ7-Pz-2kS"/>
+                            <constraint firstItem="pgV-jE-Ux5" firstAttribute="trailing" secondItem="F5R-7x-siw" secondAttribute="trailing" constant="24" id="RqX-JL-nM1"/>
                             <constraint firstItem="ylN-OZ-h3v" firstAttribute="centerX" secondItem="pgV-jE-Ux5" secondAttribute="centerX" id="XPb-oz-Smq"/>
                             <constraint firstItem="pgV-jE-Ux5" firstAttribute="trailing" secondItem="xec-Vr-0ce" secondAttribute="trailing" constant="40" id="fLT-9u-L87"/>
+                            <constraint firstItem="F5R-7x-siw" firstAttribute="bottom" secondItem="pgV-jE-Ux5" secondAttribute="bottom" id="gRv-8v-DMd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pgV-jE-Ux5"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="rmH-0B-PBX" id="ol3-vn-V4q"/>
                         <outlet property="activityLabel" destination="xec-Vr-0ce" id="KyR-dy-06Z"/>
+                        <outlet property="callPhoneButton" destination="F5R-7x-siw" id="Meb-zk-ti0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1c-M6-vNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
