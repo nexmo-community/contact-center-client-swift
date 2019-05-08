@@ -184,6 +184,55 @@ extension MainViewController: NXMClientDelegate {
         print("📣📣📣 added to conversation: \(conversation)")
     }
     
+    
+    func incomingCall(_ call: NXMCall) {
+        print("📲 📲 📲 Incoming Call: \(call)")
+        callStatus = .initiated
+        updateInterface()
+        DispatchQueue.main.async { [weak self] in
+            self?.displayIncomingCallAlert(call: call)
+        }
+    }
+    
+    func displayIncomingCallAlert(call: NXMCall) {
+        let names: [String] = call.otherCallMembers.compactMap({ participant -> String? in
+            return (participant as? NXMCallMember)?.user.displayName ?? (participant as? NXMCallMember)?.user.name
+        })
+        var message = names.joined(separator: ", ")
+        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember, otherParty.channelType == "phone", let phoneNumber = otherParty.phoneNumber {
+            message = "+\(phoneNumber)"
+        }
+        let alert = UIAlertController(title: "Incoming call from", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Answer", style: .default, handler: { _ in
+            self.answer(call: call)
+        }))
+        alert.addAction(UIAlertAction(title: "Reject", style: .default, handler: { _ in
+            self.reject(call: call)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    private func answer(call: NXMCall) {
+        self.call = call
+        self.call?.setDelegate(self)
+        call.answer(self) { [weak self] error in
+            if let error = error {
+                print("error answering call: \(error.localizedDescription)")
+            }
+            self?.callStatus = .inProgress
+            self?.updateInterface()
+        }
+    }
+    private func reject(call: NXMCall) {
+        callStatus = .completed
+        updateInterface()
+        call.reject { [weak self] error in
+            if let error = error {
+                print("error declining call: \(error.localizedDescription)")
+            }
+            self?.updateInterface()
+        }
+    }
+    
 }
 
 
