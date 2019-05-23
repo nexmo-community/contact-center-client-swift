@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func cancel() {
-        let alertController = UIAlertController(title: "Logging our", message: "Are you sure?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Logging out", message: "Are you sure?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Yes", style: .default) { [weak self]  (_) in
             self?.logout()
         })
@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
         }
         self.callStatus = .initiated
         self.updateInterface()
-        client?.call(["CALLEE_PHONE_NUMBER"], callHandler: .server, delegate: self) { [weak self] (error, call) in
+        client?.call([Constant.callee], callHandler: .server, delegate: self) { [weak self] (error, call) in
             guard let self = self else { return }
             // Handle create call failure
             guard let call = call else {
@@ -141,22 +141,18 @@ extension MainViewController {
                 self.callPhoneButton.setTitle("End Call", for: .normal)
                 self.callPhoneButton.alpha = 1
             case .inProgress:
-                self.activityIndicatorView.stopAnimating()
                 self.activityLabel.text = "Speaking..."
                 self.callPhoneButton.setTitle("End Call", for: .normal)
                 self.callPhoneButton.alpha = 1
             case .error:
-                self.activityIndicatorView.stopAnimating()
                 self.activityLabel.text = "Error Calling"
                 self.callPhoneButton.setTitle("Call Phone", for: .normal)
                 self.callPhoneButton.alpha = 1
             case .rejected:
-                self.activityIndicatorView.stopAnimating()
                 self.activityLabel.text = "Call Rejected"
                 self.callPhoneButton.setTitle("Call Phone", for: .normal)
                 self.callPhoneButton.alpha = 1
             case .completed:
-                self.activityIndicatorView.stopAnimating()
                 self.activityLabel.text = "Call Completed"
                 self.callPhoneButton.setTitle("Call Phone", for: .normal)
                 self.callPhoneButton.alpha = 1

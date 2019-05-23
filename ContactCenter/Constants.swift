@@ -12,4 +12,5 @@ import Foundation
 enum Constant {
     static let apiServerURL = "YOUR SERVER URL"
     static let apiKey = "YOUR MOBILE API KEY"
+    static let callee = "CALLEE PHONE NUMBER"
 }
