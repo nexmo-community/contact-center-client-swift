@@ -6,187 +6,220 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A15B8ADEDB63FB2B919A573359150BA2 /* Build configuration list for PBXAggregateTarget "NexmoClient" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = NexmoClient;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		3DC33A1083B249CB080FED9771ED56BD /* Pods-ContactCenter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F61C7EC15D3F73CA61FF03E2B7405604 /* Pods-ContactCenter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82902F5D3AA23E505712BD5C827C35D9 /* Pods-ContactCenter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0AD129728D2CAC8CE30F69BE9BC88 /* Pods-ContactCenter-dummy.m */; };
-		CE676A04D9B7D6B47D110BC6D74ED67D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		31C896FD1108A6D963071466B0DBAC08 /* Pods-ContactCenter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FDA4B9FFADEB843138773BC445703 /* Pods-ContactCenter-dummy.m */; };
+		8D4BB9ABF8C74F8BB7F91423482E1328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EF527141E85EFE218D9511FF6066E12F /* Pods-ContactCenter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C009C11303C960ECB6C854AA18FCC582 /* Pods-ContactCenter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6B1484B6CD4D271D8549E7236726AEBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5CB954DDE2E781D9C66E2AA8CD891BA;
+			remoteInfo = NexmoClient;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0CA493EC8EE42F7E1ACE1F0250CD4BD9 /* Pods-ContactCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContactCenter.release.xcconfig"; sourceTree = "<group>"; };
-		1BE0AD129728D2CAC8CE30F69BE9BC88 /* Pods-ContactCenter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ContactCenter-dummy.m"; sourceTree = "<group>"; };
-		1E9F431B11AF483C9E09DBF1202B0F6D /* Pods-ContactCenter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ContactCenter-frameworks.sh"; sourceTree = "<group>"; };
-		21A091243216F36D34CA479BAF671C48 /* Pods-ContactCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContactCenter.debug.xcconfig"; sourceTree = "<group>"; };
-		5078E926399111768161F9BDF1B174F4 /* NexmoClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NexmoClient.framework; sourceTree = "<group>"; };
-		6068EC83B6036A352DAC24FB85FF0D95 /* Pods-ContactCenter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ContactCenter-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B193C6D47799BF8EB88E03A4AD5EA4F6 /* Pods_ContactCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ContactCenter.framework; path = "Pods-ContactCenter.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2488979226BB8D8A5522D69A84A6F74 /* Pods-ContactCenter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ContactCenter-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B319EA77B5326B55D9F87FE359402E75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6DA4D58550763056092E33D8B52DDA8 /* Pods-ContactCenter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ContactCenter.modulemap"; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F61C7EC15D3F73CA61FF03E2B7405604 /* Pods-ContactCenter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ContactCenter-umbrella.h"; sourceTree = "<group>"; };
-		FBA60CBE229717F275433349F511DA7D /* Pods-ContactCenter-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ContactCenter-resources.sh"; sourceTree = "<group>"; };
+		27AD44D3402685676C700C548B295F27 /* Pods-ContactCenter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ContactCenter-Info.plist"; sourceTree = "<group>"; };
+		27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NexmoClient.xcconfig; sourceTree = "<group>"; };
+		2D7DC412F9024CBE04AB4561E8A456D4 /* Pods-ContactCenter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ContactCenter-acknowledgements.plist"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3AC67DEB0C7EAF921CC3714D52686676 /* Pods-ContactCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContactCenter.debug.xcconfig"; sourceTree = "<group>"; };
+		4A0FDA4B9FFADEB843138773BC445703 /* Pods-ContactCenter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ContactCenter-dummy.m"; sourceTree = "<group>"; };
+		5BA55784D15DD278C2144F37C6ECCFF0 /* Pods-ContactCenter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ContactCenter-frameworks.sh"; sourceTree = "<group>"; };
+		88E0BE49B2CCD92234EB97F2A7750930 /* Pods-ContactCenter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ContactCenter.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A4815E88CD473CFE136CA25FDECE6028 /* Pods-ContactCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ContactCenter.release.xcconfig"; sourceTree = "<group>"; };
+		BE4C15F52CF8F8BE703F72D428792A97 /* Pods_ContactCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ContactCenter.framework; path = "Pods-ContactCenter.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C009C11303C960ECB6C854AA18FCC582 /* Pods-ContactCenter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ContactCenter-umbrella.h"; sourceTree = "<group>"; };
+		DCB24C36066D301DE2ABCE691111EF4A /* Pods-ContactCenter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ContactCenter-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FE8B9A187C7164CEE2F41A7DED520B4A /* NexmoClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NexmoClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A1F3C043CFD9CBD11D8BA645256D9836 /* Frameworks */ = {
+		AEEC13E4992A7020D09C65CBA53B9E9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE676A04D9B7D6B47D110BC6D74ED67D /* Foundation.framework in Frameworks */,
+				8D4BB9ABF8C74F8BB7F91423482E1328 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DE1FEADFC0F0C721978C9EBE7A9667C /* Pods-ContactCenter */ = {
+		0D62F951FA144BE7CD471F794E5B4486 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B319EA77B5326B55D9F87FE359402E75 /* Info.plist */,
-				B6DA4D58550763056092E33D8B52DDA8 /* Pods-ContactCenter.modulemap */,
-				B2488979226BB8D8A5522D69A84A6F74 /* Pods-ContactCenter-acknowledgements.markdown */,
-				6068EC83B6036A352DAC24FB85FF0D95 /* Pods-ContactCenter-acknowledgements.plist */,
-				1BE0AD129728D2CAC8CE30F69BE9BC88 /* Pods-ContactCenter-dummy.m */,
-				1E9F431B11AF483C9E09DBF1202B0F6D /* Pods-ContactCenter-frameworks.sh */,
-				FBA60CBE229717F275433349F511DA7D /* Pods-ContactCenter-resources.sh */,
-				F61C7EC15D3F73CA61FF03E2B7405604 /* Pods-ContactCenter-umbrella.h */,
-				21A091243216F36D34CA479BAF671C48 /* Pods-ContactCenter.debug.xcconfig */,
-				0CA493EC8EE42F7E1ACE1F0250CD4BD9 /* Pods-ContactCenter.release.xcconfig */,
+				FE8B9A187C7164CEE2F41A7DED520B4A /* NexmoClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C5B3F135BC9A1C1BBF6D140E3C01F60 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E5A81DFA69DE4E84EF7E42BA8EFE6B7 /* Pods-ContactCenter */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2E5A81DFA69DE4E84EF7E42BA8EFE6B7 /* Pods-ContactCenter */ = {
+			isa = PBXGroup;
+			children = (
+				88E0BE49B2CCD92234EB97F2A7750930 /* Pods-ContactCenter.modulemap */,
+				DCB24C36066D301DE2ABCE691111EF4A /* Pods-ContactCenter-acknowledgements.markdown */,
+				2D7DC412F9024CBE04AB4561E8A456D4 /* Pods-ContactCenter-acknowledgements.plist */,
+				4A0FDA4B9FFADEB843138773BC445703 /* Pods-ContactCenter-dummy.m */,
+				5BA55784D15DD278C2144F37C6ECCFF0 /* Pods-ContactCenter-frameworks.sh */,
+				27AD44D3402685676C700C548B295F27 /* Pods-ContactCenter-Info.plist */,
+				C009C11303C960ECB6C854AA18FCC582 /* Pods-ContactCenter-umbrella.h */,
+				3AC67DEB0C7EAF921CC3714D52686676 /* Pods-ContactCenter.debug.xcconfig */,
+				A4815E88CD473CFE136CA25FDECE6028 /* Pods-ContactCenter.release.xcconfig */,
 			);
 			name = "Pods-ContactCenter";
 			path = "Target Support Files/Pods-ContactCenter";
 			sourceTree = "<group>";
 		};
-		1C09746067967EC7D0470541FABCA2BC /* Products */ = {
+		670C47623FA849ED34159858251A5C42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B193C6D47799BF8EB88E03A4AD5EA4F6 /* Pods_ContactCenter.framework */,
+				E440F8AB7CCC034A4BBB6EE37E4C4CBF /* NexmoClient */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B93CA6BB49DC940190C5590D54A77F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NexmoClient";
+			sourceTree = "<group>";
+		};
+		AB497BACF74FCCACB2888235B1C1DD08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE4C15F52CF8F8BE703F72D428792A97 /* Pods_ContactCenter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		62CA7170838E298858C5B9DAF6FF5390 /* NexmoClient */ = {
+		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
-				F076D0179057F0EB011346113C20B6FD /* Frameworks */,
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				670C47623FA849ED34159858251A5C42 /* Pods */,
+				AB497BACF74FCCACB2888235B1C1DD08 /* Products */,
+				2C5B3F135BC9A1C1BBF6D140E3C01F60 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E440F8AB7CCC034A4BBB6EE37E4C4CBF /* NexmoClient */ = {
+			isa = PBXGroup;
+			children = (
+				0D62F951FA144BE7CD471F794E5B4486 /* Frameworks */,
+				6B93CA6BB49DC940190C5590D54A77F5 /* Support Files */,
 			);
 			name = NexmoClient;
 			path = NexmoClient;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8D8420BF788BD7C96655197BE127981B /* Pods */,
-				1C09746067967EC7D0470541FABCA2BC /* Products */,
-				C38F94AFDB52C6A1583FF6655DB67DAF /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8D8420BF788BD7C96655197BE127981B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				62CA7170838E298858C5B9DAF6FF5390 /* NexmoClient */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C38F94AFDB52C6A1583FF6655DB67DAF /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0DE1FEADFC0F0C721978C9EBE7A9667C /* Pods-ContactCenter */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F076D0179057F0EB011346113C20B6FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5078E926399111768161F9BDF1B174F4 /* NexmoClient.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		63FE0087BCB7BB647E5185E8640BF340 /* Headers */ = {
+		3CE63DAF9D02C6EF05FD44CDD66E69FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC33A1083B249CB080FED9771ED56BD /* Pods-ContactCenter-umbrella.h in Headers */,
+				EF527141E85EFE218D9511FF6066E12F /* Pods-ContactCenter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		842CF989C1305505A0AA58E34A28782A /* Pods-ContactCenter */ = {
+		BF77AE3441D472F4AF0C7BE2D3C14CBC /* Pods-ContactCenter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61E036D86449367F44262B38ACAAD7DA /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */;
+			buildConfigurationList = 5F8467A50FE294C641B6939F448E06EF /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */;
 			buildPhases = (
-				63FE0087BCB7BB647E5185E8640BF340 /* Headers */,
-				0EE2062BF27768B33823653C8574D148 /* Sources */,
-				A1F3C043CFD9CBD11D8BA645256D9836 /* Frameworks */,
-				ED84BA9468A6ACB3B58B0DA0B4901EA3 /* Resources */,
+				3CE63DAF9D02C6EF05FD44CDD66E69FD /* Headers */,
+				7A8D658CC3BB15DDD29BE16424BCC7A4 /* Sources */,
+				AEEC13E4992A7020D09C65CBA53B9E9B /* Frameworks */,
+				58F7084699B0359B1E60A06A364B95C0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				412DDFEF70BB5548DC8F6A79D1ABB234 /* PBXTargetDependency */,
 			);
 			name = "Pods-ContactCenter";
 			productName = "Pods-ContactCenter";
-			productReference = B193C6D47799BF8EB88E03A4AD5EA4F6 /* Pods_ContactCenter.framework */;
+			productReference = BE4C15F52CF8F8BE703F72D428792A97 /* Pods_ContactCenter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1C09746067967EC7D0470541FABCA2BC /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AB497BACF74FCCACB2888235B1C1DD08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				842CF989C1305505A0AA58E34A28782A /* Pods-ContactCenter */,
+				E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */,
+				BF77AE3441D472F4AF0C7BE2D3C14CBC /* Pods-ContactCenter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ED84BA9468A6ACB3B58B0DA0B4901EA3 /* Resources */ = {
+		58F7084699B0359B1E60A06A364B95C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,18 +229,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0EE2062BF27768B33823653C8574D148 /* Sources */ = {
+		7A8D658CC3BB15DDD29BE16424BCC7A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82902F5D3AA23E505712BD5C827C35D9 /* Pods-ContactCenter-dummy.m in Sources */,
+				31C896FD1108A6D963071466B0DBAC08 /* Pods-ContactCenter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		412DDFEF70BB5548DC8F6A79D1ABB234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NexmoClient;
+			target = E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */;
+			targetProxy = 6B1484B6CD4D271D8549E7236726AEBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		349B260FC53026036E75F36511D981C4 /* Debug */ = {
+		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,8 +281,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -268,12 +308,12 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		9394D260877B43A09C9798F315A792D6 /* Release */ = {
+		3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,8 +345,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -330,14 +368,32 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		C38E6377C6B7A5F9A714FAEAF01976C4 /* Release */ = {
+		4219ECD24D73C61BAEB7DF441DCEDE88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CA493EC8EE42F7E1ACE1F0250CD4BD9 /* Pods-ContactCenter.release.xcconfig */;
+			baseConfigurationReference = 27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55BD81CCBFC0CAA04B5DC4E772311586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC67DEB0C7EAF921CC3714D52686676 /* Pods-ContactCenter.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -350,7 +406,62 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		795DEB9255CA936B6D85903398AAB947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80417D2E3702259F8B5491420928FB07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4815E88CD473CFE136CA25FDECE6028 /* Pods-ContactCenter.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,66 +485,37 @@
 			};
 			name = Release;
 		};
-		FFF7E03EC115EB2CE54F4524405EA024 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21A091243216F36D34CA479BAF671C48 /* Pods-ContactCenter.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				349B260FC53026036E75F36511D981C4 /* Debug */,
-				9394D260877B43A09C9798F315A792D6 /* Release */,
+				204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */,
+				3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61E036D86449367F44262B38ACAAD7DA /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */ = {
+		5F8467A50FE294C641B6939F448E06EF /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FFF7E03EC115EB2CE54F4524405EA024 /* Debug */,
-				C38E6377C6B7A5F9A714FAEAF01976C4 /* Release */,
+				55BD81CCBFC0CAA04B5DC4E772311586 /* Debug */,
+				80417D2E3702259F8B5491420928FB07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A15B8ADEDB63FB2B919A573359150BA2 /* Build configuration list for PBXAggregateTarget "NexmoClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				795DEB9255CA936B6D85903398AAB947 /* Debug */,
+				4219ECD24D73C61BAEB7DF441DCEDE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

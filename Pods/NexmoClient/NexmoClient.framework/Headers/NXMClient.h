@@ -22,12 +22,12 @@ Return the connection status.
 /*!
  Return the current user
  */
-@property (nonatomic, strong, readonly, nullable, getter=getUser) NXMUser *user;
+@property (nonatomic, readonly, nullable, getter=getUser) NXMUser *user;
 
 /*!
  Return the current authentication token
  */
-@property (nonatomic, strong, readonly, nullable, getter=getToken) NSString *token;
+@property (nonatomic, readonly, nullable, getter=getToken) NSString *token;
 
 /**
  init nxmClient with authentication token

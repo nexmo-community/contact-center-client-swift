@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-bL-N4b">
-                                <rect key="frame" x="24" y="818" width="366" height="44"/>
+                                <rect key="frame" x="24" y="798" width="366" height="44"/>
                                 <color key="backgroundColor" red="0.2091954714" green="0.64987062039999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0Ui-Jw-EK0"/>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8Y-ix-RzU">
-                                <rect key="frame" x="24" y="762" width="366" height="44"/>
+                                <rect key="frame" x="24" y="742" width="366" height="44"/>
                                 <color key="backgroundColor" red="0.2091954714" green="0.64987062039999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="M5y-yb-tYq"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="Jao-bL-N4b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="p2a-ba-ObJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d8Y-ix-RzU" secondAttribute="trailing" constant="24" id="soE-SZ-CqM"/>
                             <constraint firstItem="d8Y-ix-RzU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="wem-ov-FKs"/>
-                            <constraint firstItem="Jao-bL-N4b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xvh-rh-uQ3"/>
+                            <constraint firstItem="Jao-bL-N4b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="xvh-rh-uQ3"/>
                             <constraint firstItem="cQi-KD-vZb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yM3-OW-T1b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -119,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5R-7x-siw">
-                                <rect key="frame" x="24" y="818" width="366" height="44"/>
+                                <rect key="frame" x="24" y="798" width="366" height="44"/>
                                 <color key="backgroundColor" red="0.2091954714" green="0.64987062039999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="MlH-LT-eid"/>
@@ -145,7 +145,7 @@
                             <constraint firstItem="pgV-jE-Ux5" firstAttribute="trailing" secondItem="F5R-7x-siw" secondAttribute="trailing" constant="24" id="RqX-JL-nM1"/>
                             <constraint firstItem="ylN-OZ-h3v" firstAttribute="centerX" secondItem="pgV-jE-Ux5" secondAttribute="centerX" id="XPb-oz-Smq"/>
                             <constraint firstItem="pgV-jE-Ux5" firstAttribute="trailing" secondItem="xec-Vr-0ce" secondAttribute="trailing" constant="40" id="fLT-9u-L87"/>
-                            <constraint firstItem="F5R-7x-siw" firstAttribute="bottom" secondItem="pgV-jE-Ux5" secondAttribute="bottom" id="gRv-8v-DMd"/>
+                            <constraint firstItem="F5R-7x-siw" firstAttribute="bottom" secondItem="pgV-jE-Ux5" secondAttribute="bottom" constant="-20" id="gRv-8v-DMd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pgV-jE-Ux5"/>
                     </view>

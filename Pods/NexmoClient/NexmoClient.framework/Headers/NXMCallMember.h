@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NXMUser.h"
+#import "NXMChannel.h"
 
 typedef NS_ENUM(NSInteger, NXMCallMemberStatus) {
     NXMCallMemberStatusDialling,
@@ -22,8 +23,8 @@ typedef NS_ENUM(NSInteger, NXMCallMemberStatus) {
 @property (nonatomic, copy, nonnull) NSString *callId;
 @property (nonatomic, copy, nonnull) NSString *memberId;
 @property (nonatomic, readonly, nonnull) NXMUser *user;
-@property (nonatomic, copy, nullable) NSString *phoneNumber;
-@property (nonatomic, copy, nonnull) NSString *channelType;
+@property (nonatomic, readonly, nullable) NXMChannel *channel;
+
 @property (nonatomic, readonly) BOOL isMuted;
 @property (nonatomic, readonly) NXMCallMemberStatus status;
 @property (nonatomic, copy, nonnull) NSString *statusDescription;

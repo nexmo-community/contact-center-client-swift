@@ -195,8 +195,8 @@ extension MainViewController: NXMClientDelegate {
             return (participant as? NXMCallMember)?.user.displayName ?? (participant as? NXMCallMember)?.user.name
         })
         var message = names.joined(separator: ", ")
-        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember, otherParty.channelType == "phone", let phoneNumber = otherParty.phoneNumber {
-            message = "+\(phoneNumber)"
+        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember, let from = otherParty.channel?.from.data {
+            message = "+\(from)"
         }
         let alert = UIAlertController(title: "Incoming call from", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Answer", style: .default, handler: { _ in
