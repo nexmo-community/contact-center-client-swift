@@ -205,13 +205,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COr-Yt-F5B">
-                                                    <rect key="frame" x="20" y="11" width="302" height="25.5"/>
+                                                    <rect key="frame" x="20" y="19" width="302" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leg id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpl-p5-9tZ">
-                                                    <rect key="frame" x="20" y="85.5" width="374" height="25.5"/>
+                                                    <rect key="frame" x="20" y="83" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -226,7 +226,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conv id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OF-Jj-dSq">
-                                                    <rect key="frame" x="20" y="48.5" width="374" height="25"/>
+                                                    <rect key="frame" x="20" y="51" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -243,10 +243,10 @@
                                                 <constraint firstItem="oou-7n-QIx" firstAttribute="trailing" secondItem="pvm-FG-Prp" secondAttribute="trailingMargin" id="gCW-A1-JKX"/>
                                                 <constraint firstItem="bpl-p5-9tZ" firstAttribute="top" secondItem="1OF-Jj-dSq" secondAttribute="bottom" constant="12" id="gOv-rv-DEo"/>
                                                 <constraint firstItem="COr-Yt-F5B" firstAttribute="leading" secondItem="pvm-FG-Prp" secondAttribute="leadingMargin" id="jzT-zj-spg"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bpl-p5-9tZ" secondAttribute="bottom" id="k7g-yH-bch"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bpl-p5-9tZ" secondAttribute="bottom" constant="8" id="k7g-yH-bch"/>
                                                 <constraint firstItem="1OF-Jj-dSq" firstAttribute="top" secondItem="COr-Yt-F5B" secondAttribute="bottom" constant="12" id="rGn-tM-GbW"/>
                                                 <constraint firstItem="oou-7n-QIx" firstAttribute="leading" secondItem="COr-Yt-F5B" secondAttribute="trailing" constant="12" id="uhF-dN-vOs"/>
-                                                <constraint firstItem="COr-Yt-F5B" firstAttribute="top" secondItem="pvm-FG-Prp" secondAttribute="topMargin" id="vGj-bd-Xlc"/>
+                                                <constraint firstItem="COr-Yt-F5B" firstAttribute="top" secondItem="pvm-FG-Prp" secondAttribute="topMargin" constant="8" id="vGj-bd-Xlc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

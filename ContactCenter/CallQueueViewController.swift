@@ -206,12 +206,33 @@ extension CallQueueViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        getConversationInfo(conversation: conversations[indexPath.row])
+        let conversation = conversations[indexPath.row]
+        print("📣📣📣 conversation selected: \(conversation)")
+        
+//        self.call?.addMember(withNumber: conversation.msisdn, completionHandler: { (error) in
+//            print("call add member with number - error: \(String(describing: error))")
+//        })
+//        self.call?.addMember(withUserId: conversation.leg_id, completionHandler: { (error) in
+//            print("call add member - error: \(String(describing: error))")
+//        })
+//        getConversationInfo(conversation: conversations[indexPath.row])
+        
+        
+        
     }
     
+    
+    // MARK: - Bring user in
+    
+    
+    
+    
+    
+    
+    //    MARK: - Joining user's conversation
+    
     func getConversationInfo(conversation: QueuedConversation) {
-        print("📣📣📣 conversation selected: \(conversation)")
-        client.getConversationWithId(conversation.conversation_id) { (error, conversation) in
+        client.getConversationWithId(conversation.conversation_id) { [weak self] (error, conversation) in
             print("conversation error: \(String(describing: error))")
             print("conversation: \(String(describing: conversation))")
 
@@ -224,10 +245,40 @@ extension CallQueueViewController : UITableViewDelegate {
                 }
             } else {
                 print("conversation: \(String(describing: conversation))")
+                if let conversation = conversation {
+                    self?.join(conversation: conversation)
+                }
             }
         }
     }
+    func join(conversation: NXMConversation) {
+        conversation.delegate = self
+        conversation.join(completion: { (error, member) in
+            if let error = error {
+                DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+                    let nexmoError = error as NSError
+                    let alert = UIAlertController(title: "Error", message: (nexmoError.userInfo["description"] as? String) ?? error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                }
+                return
+            }
+            print("conversation joined - error: \(String(describing: error))")
+            print("conversation joined - member : \(String(describing: member))")
+            print("conversation joined - member.memberId : \(String(describing: member?.memberId))")
+            print("conversation joined - member.user.name : \(String(describing: member?.user.name))")
+            print("conversation joined - member state: \(String(describing: member?.state.rawValue))")
+        })
+    }
+    
 }
 
 
+extension CallQueueViewController: NXMConversationDelegate {
+    
+    func memberEvent(_ memberEvent: NXMMemberEvent) {
+        print("CONVERSATIION EVENT - member: \(memberEvent.user.name)   |  state: \(memberEvent.state.rawValue)")
+        print("                    - channel: \(memberEvent.channel?.from.type) \(memberEvent.channel?.from.data) => \(memberEvent.channel?.to?.type) \(memberEvent.channel?.to?.data)")
+    }
+}
 
