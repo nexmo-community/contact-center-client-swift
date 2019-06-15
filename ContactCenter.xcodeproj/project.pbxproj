@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1254A20722B3D457005576AB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20622B3D456005576AB /* Logger.swift */; };
+		1254A20922B50D32005576AB /* CallQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20822B50D32005576AB /* CallQueueViewController.swift */; };
 		12D0ACF32279EDF3009D1CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */; };
 		12D0ACF82279EDF3009D1CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12D0ACF62279EDF3009D1CF7 /* Main.storyboard */; };
 		12D0ACFA2279EDF3009D1CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12D0ACF92279EDF3009D1CF7 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1254A20622B3D456005576AB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		1254A20822B50D32005576AB /* CallQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallQueueViewController.swift; sourceTree = "<group>"; };
 		12D0ACEF2279EDF3009D1CF7 /* ContactCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D0ACF22279EDF3009D1CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12D0ACF72279EDF3009D1CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				12D0AD0F2279FB96009D1CF7 /* NexmoClientExtensions.swift */,
 				12D0AD0B2279F200009D1CF7 /* UserSelectionViewController.swift */,
 				12D0AD0D2279F4AB009D1CF7 /* MainViewController.swift */,
+				1254A20622B3D456005576AB /* Logger.swift */,
+				1254A20822B50D32005576AB /* CallQueueViewController.swift */,
 				12D0AD042279F106009D1CF7 /* APIs */,
 			);
 			path = ContactCenter;
@@ -230,9 +236,11 @@
 				12D0AD0A2279F11C009D1CF7 /* NexmoUser.swift in Sources */,
 				12D0AD082279F11C009D1CF7 /* ApiClient.swift in Sources */,
 				12D0AD0E2279F4AB009D1CF7 /* MainViewController.swift in Sources */,
+				1254A20922B50D32005576AB /* CallQueueViewController.swift in Sources */,
 				12D0AD092279F11C009D1CF7 /* Constants.swift in Sources */,
 				12D0AD102279FB96009D1CF7 /* NexmoClientExtensions.swift in Sources */,
 				12D0AD0C2279F200009D1CF7 /* UserSelectionViewController.swift in Sources */,
+				1254A20722B3D457005576AB /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var callQueueButton: UIButton!
     @IBOutlet weak var callPhoneButton: UIButton!
     
     weak var userSelectionVC: UserSelectionViewController?
@@ -31,14 +32,16 @@ class MainViewController: UIViewController {
     var client: NXMClient!
     var call: NXMCall?
     var callStatus: CallStatus = .ready
+    let logger = Logger()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(cancel))
-        
+        self.title = user.name
         client = NXMClient(token: user.token)
         client.setDelegate(self)
+        client.setLoggerDelegate(logger)
         client.login()
     }
 
@@ -95,6 +98,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCallQueue", let destinationVC = segue.destination as? CallQueueViewController {
+            destinationVC.client = self.client
+        }
+    }
 
 }
 
@@ -110,6 +119,7 @@ extension MainViewController {
             self.activityLabel.text = "Ready."
             self.navigationItem.rightBarButtonItem = nil
             self.callPhoneButton.alpha = 0
+            self.callQueueButton.alpha = 0
             
             guard let client = self.client else {
                 self.activityLabel.text = "Ready."
@@ -129,6 +139,8 @@ extension MainViewController {
                 self.activityLabel.text = "Disconnected"
                 return
             }
+            
+            self.callQueueButton.alpha = 1
             
             switch self.callStatus {
             case .ready:

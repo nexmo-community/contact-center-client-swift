@@ -72,4 +72,47 @@ final class ApiClient {
         task.resume()
     }
     
+    
+    // Call Whisper info
+    
+    func callWhisperInfo(sucessResponse: @escaping (String, String, String) -> Void, errorResponse: @escaping (Error) -> Void) {
+        guard let request = httpRequest(url: "\(Constant.apiServerURL)/api/whisper", params: ["mobile_api_key": Constant.apiKey]) else {
+            return
+        }
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                errorResponse(ApiError.InvalidResponse)
+                return
+            }
+            
+            guard let conversation_id = json["conversation_id"] as? String, let customer_leg_id = json["customer_leg_id"] as? String, let agent_leg_id = json["agent_leg_id"] as? String else {
+                errorResponse(ApiError.InvalidResponse)
+                return
+            }
+            sucessResponse(conversation_id, customer_leg_id, agent_leg_id)
+        }
+        task.resume()
+    }
+    
+    
+    
+    // Call Whisper info
+    
+    func conversationsQueue(sucessResponse: @escaping ([String]) -> Void, errorResponse: @escaping (Error) -> Void) {
+        guard let request = httpRequest(url: "\(Constant.apiServerURL)/api/queue", params: ["mobile_api_key": Constant.apiKey]) else {
+            return
+        }
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                errorResponse(ApiError.InvalidResponse)
+                return
+            }
+            guard let conversations = json["conversations"] as? [String]  else {
+                errorResponse(ApiError.InvalidResponse)
+                return
+            }
+            sucessResponse(conversations)
+        }
+        task.resume()
+    }
 }
