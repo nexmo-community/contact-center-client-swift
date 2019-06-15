@@ -17,28 +17,91 @@ class CallQueueViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     weak var client: NXMClient!
+    var callStatus: CallStatus = .ready
     
-    var conversations = [String]()
+    
+    var conversations = [QueuedConversation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Call Queue"
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.loadQueue()
+            self?.connect()
+            //self?.loadQueue()
         }
         
         tableView.alpha = 0
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Disconnect", style: .plain, target: self, action: #selector(cancel))
+    }
+    
+    @objc func cancel() {
+        let alertController = UIAlertController(title: "Disconnecting", message: "Are you sure?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .default) { [weak self]  (_) in
+            self?.disconnect()
+        })
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alertController.view.setNeedsLayout()
+        present(alertController, animated: true) { () -> Void in }
+    }
+    
+    func disconnect() {
+        call?.hangup()
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    var call: NXMCall?
+    func connect() {
+        activityIndicatorView.startAnimating()
+        activityLabel.text = "Connecting as agent..."
+        
+        client?.call([Constant.appNumber], callHandler: .server, delegate: self) { [weak self] (error, call) in
+            guard let self = self else { return }
+            // Handle create call failure
+            guard let call = call else {
+                if let error = error {
+                    // Handle create call failure
+                    print("❌❌❌ call not created: \(error.localizedDescription)")
+                } else {
+                    // Handle unexpected create call failure
+                    print("❌❌❌ call not created: unknown error")
+                }
+                self.callStatus = .error
+                self.call = nil
+                self.activityIndicatorView.stopAnimating()
+                self.activityLabel.text = "Could not connect as agent..."
+                self.tableView.alpha = 0
+                return
+            }
+            
+            // Handle call created successfully.
+            // callDelegate's  statusChanged: will be invoked with needed updates.
+            self.callStatus = .initiated
+            call.setDelegate(self)
+            self.call = call
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.activityIndicatorView.startAnimating()
+                self.activityLabel.text = "Connecting as agent..."
+                self.tableView.alpha = 0
+            }
+        }
     }
     
     
 
-    func loadQueue() {
-        activityIndicatorView.startAnimating()
-        activityLabel.text = "Loading the queue..."
+    @objc func loadQueue() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.activityIndicatorView.startAnimating()
+            self.activityLabel.text = "Loading the queue..."
+        }
         
         ApiClient.shared.conversationsQueue(sucessResponse: { [weak self] (conversations) in
             // token retrieved
@@ -52,6 +115,7 @@ class CallQueueViewController: UIViewController {
                     self.activityLabel.alpha = 0
                     self.activityIndicatorView.stopAnimating()
                     self.tableView.alpha = 1
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(self.loadQueue))
                 })
             }
         }) { (error) in
@@ -65,6 +129,49 @@ class CallQueueViewController: UIViewController {
     }
     
 }
+
+
+
+
+//MARK:- Call Delegate
+
+extension CallQueueViewController: NXMCallDelegate {
+    
+    func statusChanged(_ member: NXMCallMember) {
+        print("🤙🤙🤙 Call Status changed | member: \(String(describing: member.user.displayName)) | \(String(describing: member.user.userId))")
+        print("🤙🤙🤙 Call Status changed | member status: \(String(describing: member.status.description()))")
+        
+        guard let call = call else {
+            return
+        }
+        
+        // call completed
+        if member == call.myCallMember, member.status == .completed {
+            self.cancel()
+        }
+        
+        // call ended before it could be answered
+        if member == call.myCallMember, member.status == .answered, let otherMember = call.otherCallMembers.firstObject as? NXMCallMember, [NXMCallMemberStatus.completed, NXMCallMemberStatus.cancelled].contains(otherMember.status)  {
+            self.cancel()
+        }
+        
+        // call rejected
+        if call.otherCallMembers.contains(member), member.status == .cancelled {
+            self.cancel()
+        }
+        
+        // call ended
+        if call.otherCallMembers.contains(member), member.status == .completed {
+            self.cancel()
+        }
+        
+        if member == call.myCallMember, member.status == .answered, self.conversations.count == 0 {
+            self.loadQueue()
+        }
+    }
+    
+}
+
 
 
 extension CallQueueViewController : UITableViewDataSource {
@@ -85,13 +192,13 @@ extension CallQueueViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell")
-        cell?.textLabel?.text = conversations[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell") as? CallQueueCell
+        cell?.updateWith(conversation: conversations[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        return 120.0
     }
 }
 
@@ -99,15 +206,15 @@ extension CallQueueViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        getConversationInfo(conversation_id: conversations[indexPath.row])
+        getConversationInfo(conversation: conversations[indexPath.row])
     }
     
-    func getConversationInfo(conversation_id: String) {
-        print("📣📣📣 conversation selected: \(conversation_id)")
-        client.getConversationWithId(conversation_id) { (error, conversation) in
+    func getConversationInfo(conversation: QueuedConversation) {
+        print("📣📣📣 conversation selected: \(conversation)")
+        client.getConversationWithId(conversation.conversation_id) { (error, conversation) in
             print("conversation error: \(String(describing: error))")
             print("conversation: \(String(describing: conversation))")
-            
+
             if let error = error {
                 let nexmoError = error as NSError
                 DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
@@ -121,3 +228,6 @@ extension CallQueueViewController : UITableViewDelegate {
         }
     }
 }
+
+
+

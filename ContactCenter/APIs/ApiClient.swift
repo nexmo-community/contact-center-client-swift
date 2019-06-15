@@ -97,8 +97,8 @@ final class ApiClient {
     
     
     // Call Whisper info
-    
-    func conversationsQueue(sucessResponse: @escaping ([String]) -> Void, errorResponse: @escaping (Error) -> Void) {
+
+    func conversationsQueue(sucessResponse: @escaping ([QueuedConversation]) -> Void, errorResponse: @escaping (Error) -> Void) {
         guard let request = httpRequest(url: "\(Constant.apiServerURL)/api/queue", params: ["mobile_api_key": Constant.apiKey]) else {
             return
         }
@@ -107,10 +107,14 @@ final class ApiClient {
                 errorResponse(ApiError.InvalidResponse)
                 return
             }
-            guard let conversations = json["conversations"] as? [String]  else {
+            guard let conversationsJSON = json["conversations"] as? [[String: Any]]  else {
                 errorResponse(ApiError.InvalidResponse)
                 return
             }
+            let conversations = conversationsJSON.compactMap { conversationJSON in
+                return try? QueuedConversation(json: conversationJSON)
+            }
+            
             sucessResponse(conversations)
         }
         task.resume()
