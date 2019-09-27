@@ -6,6 +6,7 @@
 //
 
 #import "NXMEnums.h"
+#import "NXMLeg.h"
 
 @interface NXMDirection : NSObject
 
@@ -17,6 +18,7 @@
 
 @property (nonatomic, readonly, nonnull) NXMDirection *from;
 @property (nonatomic, readonly, nullable) NXMDirection *to;
+@property (nonatomic, readonly, nullable) NXMLeg *leg;
 
 @end
 

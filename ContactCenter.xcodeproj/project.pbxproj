@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1254A20722B3D457005576AB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20622B3D456005576AB /* Logger.swift */; };
 		1254A20922B50D32005576AB /* CallQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20822B50D32005576AB /* CallQueueViewController.swift */; };
 		1254A20B22B53A00005576AB /* CallQueueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20A22B53A00005576AB /* CallQueueCell.swift */; };
 		1254A20D22B54C58005576AB /* QueuedConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1254A20C22B54C58005576AB /* QueuedConversation.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1254A20622B3D456005576AB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		1254A20822B50D32005576AB /* CallQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallQueueViewController.swift; sourceTree = "<group>"; };
 		1254A20A22B53A00005576AB /* CallQueueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallQueueCell.swift; sourceTree = "<group>"; };
 		1254A20C22B54C58005576AB /* QueuedConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedConversation.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				12D0AD0F2279FB96009D1CF7 /* NexmoClientExtensions.swift */,
 				12D0AD0B2279F200009D1CF7 /* UserSelectionViewController.swift */,
 				12D0AD0D2279F4AB009D1CF7 /* MainViewController.swift */,
-				1254A20622B3D456005576AB /* Logger.swift */,
 				1254A20822B50D32005576AB /* CallQueueViewController.swift */,
 				1254A20C22B54C58005576AB /* QueuedConversation.swift */,
 				1254A20A22B53A00005576AB /* CallQueueCell.swift */,
@@ -248,7 +245,6 @@
 				12D0AD092279F11C009D1CF7 /* Constants.swift in Sources */,
 				12D0AD102279FB96009D1CF7 /* NexmoClientExtensions.swift in Sources */,
 				12D0AD0C2279F200009D1CF7 /* UserSelectionViewController.swift in Sources */,
-				1254A20722B3D457005576AB /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

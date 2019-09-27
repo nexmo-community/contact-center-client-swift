@@ -23,6 +23,12 @@ typedef NS_ENUM(NSInteger, NXMConnectionStatusReason) {
     NXMConnectionStatusReasonTerminated
 };
 
+typedef NS_ENUM(NSInteger, NXMMemberUpdateType) {
+    NXMMemberUpdateTypeState,
+    NXMMemberUpdateTypeMedia,
+    NXMMemberUpdateTypeLeg
+};
+
 typedef NS_ENUM(NSInteger, NXMMediaType) {
     NXMMediaTypeNone = (0),
     NXMMediaTypeAudio = (1 << 0),
@@ -31,11 +37,11 @@ typedef NS_ENUM(NSInteger, NXMMediaType) {
 
 typedef NS_ENUM(NSInteger, NXMMediaActionType) {
     NXMMediaActionTypeSuspend
-    //TODO:earmuffed?held?
 };
 
 typedef NS_ENUM(NSInteger, NXMEventType) {
     NXMEventTypeGeneral,
+    NXMEventTypeCustom,
     NXMEventTypeText,
     NXMEventTypeImage,
     NXMEventTypeMessageStatus,
@@ -44,7 +50,15 @@ typedef NS_ENUM(NSInteger, NXMEventType) {
     NXMEventTypeMediaAction,
     NXMEventTypeMember,
     NXMEventTypeSip,
-    NXMEventDTMF
+    NXMEventTypeDTMF,
+    NXMEventTypeLegStatus
+};
+
+typedef NS_ENUM(NSInteger, NXMSipStatus){
+    NXMSipEventRinging,
+    NXMSipEventAnswered,
+    NXMSipEventStatus,
+    NXMSipEventHangup
 };
 
 typedef NS_ENUM(NSInteger, NXMMessageStatusType) {
@@ -74,18 +88,30 @@ typedef NS_ENUM(NSInteger, NXMDirectionType){
     NXMDirectionTypeUnknown
 };
 
-typedef NS_ENUM(NSInteger, NXMSipEventType){
-    NXMSipEventRinging,
-    NXMSipEventAnswered,
-    NXMSipEventStatus,
-    NXMSipEventHangup
-};
 
 typedef NS_ENUM(NSInteger, NXMMediaStreamType) {
     NXMMediaStreamTypeNone,
     NXMMediaStreamTypeSend,
     NXMMediaStreamTypeReceive,
     NXMMediaStreamTypeSendReceive
+};
+
+typedef NS_ENUM(NSInteger, NXMLegStatus) {
+    NXMLegStatusRinging,
+    NXMLegStatusStarted,
+    NXMLegStatusAnswered,
+    NXMLegStatusCanceled,
+    NXMLegStatusFailed,
+    NXMLegStatusBusy,
+    NXMLegStatusTimeout,
+    NXMLegStatusRejected,
+    NXMLegStatusCompleted
+};
+
+typedef NS_ENUM(NSInteger, NXMLegType) {
+    NXMLegTypeApp,
+    NXMLegTypePhone,
+    NXMLegTypeUnknown
 };
 
 

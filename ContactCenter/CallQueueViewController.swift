@@ -61,8 +61,8 @@ class CallQueueViewController: UIViewController {
         activityIndicatorView.startAnimating()
         activityLabel.text = "Connecting as agent..."
         
-        client?.call([Constant.appNumber], callHandler: .server, delegate: self) { [weak self] (error, call) in
-            guard let self = self else { return }
+        
+        client.call(Constant.appNumber, callHandler: .server) { (error, call) in
             // Handle create call failure
             guard let call = call else {
                 if let error = error {
@@ -136,9 +136,22 @@ class CallQueueViewController: UIViewController {
 //MARK:- Call Delegate
 
 extension CallQueueViewController: NXMCallDelegate {
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
+        statusChanged(callMember)
+    }
+    
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {
+                statusChanged(callMember)
+        print("Call Queue - isMuted",muted)
+    }
+    
+    func call(_ call: NXMCall, didReceive error: Error) {
+        print("Call Queue - error", error)
+    }
+    
     
     func statusChanged(_ member: NXMCallMember) {
-        print("🤙🤙🤙 Call Status changed | member: \(String(describing: member.user.displayName)) | \(String(describing: member.user.userId))")
+        print("🤙🤙🤙 Call Status changed | member: \(String(describing: member.user.displayName)) | \(String(describing: member.user.uuid))")
         print("🤙🤙🤙 Call Status changed | member status: \(String(describing: member.status.description()))")
         
         guard let call = call else {
@@ -151,12 +164,12 @@ extension CallQueueViewController: NXMCallDelegate {
         }
         
         // call ended before it could be answered
-        if member == call.myCallMember, member.status == .answered, let otherMember = call.otherCallMembers.firstObject as? NXMCallMember, [NXMCallMemberStatus.completed, NXMCallMemberStatus.cancelled].contains(otherMember.status)  {
+        if member == call.myCallMember, member.status == .answered, let otherMember = call.otherCallMembers.firstObject as? NXMCallMember, [NXMCallMemberStatus.completed, NXMCallMemberStatus.canceled].contains(otherMember.status)  {
             self.cancel()
         }
         
         // call rejected
-        if call.otherCallMembers.contains(member), member.status == .cancelled {
+        if call.otherCallMembers.contains(member), member.status == .canceled {
             self.cancel()
         }
         
@@ -220,19 +233,12 @@ extension CallQueueViewController : UITableViewDelegate {
         
         
     }
-    
-    
-    // MARK: - Bring user in
-    
-    
-    
-    
-    
+
     
     //    MARK: - Joining user's conversation
     
     func getConversationInfo(conversation: QueuedConversation) {
-        client.getConversationWithId(conversation.conversation_id) { [weak self] (error, conversation) in
+        client.getConversationWithUUid(conversation.conversation_id) { [weak self] (error, conversation) in
             print("conversation error: \(String(describing: error))")
             print("conversation: \(String(describing: conversation))")
 
@@ -253,7 +259,8 @@ extension CallQueueViewController : UITableViewDelegate {
     }
     func join(conversation: NXMConversation) {
         conversation.delegate = self
-        conversation.join(completion: { (error, member) in
+        
+        conversation.join { (error, member) in
             if let error = error {
                 DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
                     let nexmoError = error as NSError
@@ -265,20 +272,25 @@ extension CallQueueViewController : UITableViewDelegate {
             }
             print("conversation joined - error: \(String(describing: error))")
             print("conversation joined - member : \(String(describing: member))")
-            print("conversation joined - member.memberId : \(String(describing: member?.memberId))")
+            print("conversation joined - member.memberId : \(String(describing: member?.memberUuid))")
             print("conversation joined - member.user.name : \(String(describing: member?.user.name))")
             print("conversation joined - member state: \(String(describing: member?.state.rawValue))")
-        })
+        }
     }
     
 }
 
 
 extension CallQueueViewController: NXMConversationDelegate {
+    func conversation(_ conversation: NXMConversation, didReceive error: Error) {
+        print("CONVERSATIION EVENT - error: \(String(describing: error))")
+
+    }
     
-    func memberEvent(_ memberEvent: NXMMemberEvent) {
-        print("CONVERSATIION EVENT - member: \(memberEvent.user.name)   |  state: \(memberEvent.state.rawValue)")
-        print("                    - channel: \(memberEvent.channel?.from.type) \(memberEvent.channel?.from.data) => \(memberEvent.channel?.to?.type) \(memberEvent.channel?.to?.data)")
+    
+    func conversation(_ conversation: NXMConversation, didReceive event: NXMMemberEvent) {
+        print("CONVERSATIION EVENT - member: \(event.member.memberUuid)   |  state: \(event.state.rawValue)")
+        print("                    - channel: \(event.channel?.from.type) \(event.channel?.from.data) => \(event.channel?.to?.type) \(event.channel?.to?.data)")
     }
 }
 

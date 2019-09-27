@@ -32,17 +32,15 @@ class MainViewController: UIViewController {
     var client: NXMClient!
     var call: NXMCall?
     var callStatus: CallStatus = .ready
-    let logger = Logger()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(cancel))
         self.title = user.name
-        client = NXMClient(token: user.token)
+        client = NXMClient.shared
+        client.login(withAuthToken: user.token)
         client.setDelegate(self)
-        client.setLoggerDelegate(logger)
-        client.login()
     }
 
     @objc func cancel() {
@@ -72,8 +70,9 @@ class MainViewController: UIViewController {
         }
         self.callStatus = .initiated
         self.updateInterface()
-        client?.call([Constant.callee], callHandler: .server, delegate: self) { [weak self] (error, call) in
-            guard let self = self else { return }
+            
+        client.call(Constant.callee, callHandler: .server) { (error, call) in
+
             // Handle create call failure
             guard let call = call else {
                 if let error = error {
@@ -182,18 +181,19 @@ extension MainViewController {
 
 extension MainViewController: NXMClientDelegate {
     
-    func connectionStatusChanged(_ status: NXMConnectionStatus, reason: NXMConnectionStatusReason) {
+    func client(_ client: NXMClient, didChange status: NXMConnectionStatus, reason: NXMConnectionStatusReason) {
         print("👁👁👁 connectionStatusChanged - status: \(status.description()) - reason: \(reason.description())")
-        print("Client connection status: \(String(describing: client?.connectionStatus.description()))")
+        print("Client connection status: \(String(describing: client.connectionStatus.description()))")
         updateInterface()
     }
     
-    func added(to conversation: NXMConversation) {
-        print("📣📣📣 added to conversation: \(conversation)")
+    
+    func client(_ client: NXMClient, didReceiveError error: Error) {
+        print("Client - Recieved Error",error)
+        
     }
     
-    
-    func incomingCall(_ call: NXMCall) {
+    func client(_ client: NXMClient, didReceive call: NXMCall) {
         print("📲 📲 📲 Incoming Call: \(call)")
         callStatus = .initiated
         updateInterface()
@@ -201,6 +201,12 @@ extension MainViewController: NXMClientDelegate {
             self?.displayIncomingCallAlert(call: call)
         }
     }
+    
+    func client(_ client: NXMClient, didReceive conversation: NXMConversation) {
+        print("client - incomcing conversation",conversation.name)
+    }
+    
+
     
     func displayIncomingCallAlert(call: NXMCall) {
         let names: [String] = call.otherCallMembers.compactMap({ participant -> String? in
@@ -222,7 +228,8 @@ extension MainViewController: NXMClientDelegate {
     private func answer(call: NXMCall) {
         self.call = call
         self.call?.setDelegate(self)
-        call.answer(self) { [weak self] error in
+         
+        call.answer {  [weak self] error in
             if let error = error {
                 print("error answering call: \(error.localizedDescription)")
             }
@@ -252,47 +259,56 @@ extension MainViewController: NXMClientDelegate {
 
 extension MainViewController: NXMCallDelegate {
     
-    func statusChanged(_ member: NXMCallMember) {
-        print("🤙🤙🤙 Call Status changed | member: \(String(describing: member.user.displayName)) | \(String(describing: member.user.userId))")
-        print("🤙🤙🤙 Call Status changed | member status: \(String(describing: member.status.description()))")
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
+        print("🤙🤙🤙 Call Status changed | member: \(String(describing: callMember.user.displayName)) | \(String(describing: callMember.user.uuid))")
+        print("🤙🤙🤙 Call Status changed | member status: \(String(describing: status.description()))")
         
-        guard let call = call else {
-            // this should never happen
-            self.callStatus = .ready
-            self.updateInterface()
-            return
-        }
         
         // call completed
-        if member == call.myCallMember, member.status == .completed {
+        if callMember == call.myCallMember, status == .completed {
             self.callStatus = .completed
-            self.call?.myCallMember.hangup()
+            self.call?.hangup()
             self.call = nil
         }
 
         // call ended before it could be answered
-        if member == call.myCallMember, member.status == .answered, let otherMember = call.otherCallMembers.firstObject as? NXMCallMember, [NXMCallMemberStatus.completed, NXMCallMemberStatus.cancelled].contains(otherMember.status)  {
+        if callMember == call.myCallMember, status == .answered, let otherMember = call.otherCallMembers.firstObject as? NXMCallMember, [NXMCallMemberStatus.completed, NXMCallMemberStatus.canceled].contains(otherMember.status)  {
             self.callStatus = .completed
-            self.call?.myCallMember.hangup()
+            self.call?.hangup()
             self.call = nil
         }
 
         // call rejected
-        if call.otherCallMembers.contains(member), member.status == .cancelled {
+        if call.otherCallMembers.contains(callMember), status == .canceled {
             self.callStatus = .rejected
-            self.call?.myCallMember.hangup()
+            self.call?.hangup()
             self.call = nil
         }
 
         // call ended
-        if call.otherCallMembers.contains(member), member.status == .completed {
+        if call.otherCallMembers.contains(callMember), status == .completed {
             self.callStatus = .completed
-            self.call?.myCallMember.hangup()
+            self.call?.hangup()
             self.call = nil
         }
+        
+        if status == .answered {
+            self.callStatus = .inProgress
+        }
+        
 
         updateInterface()
     }
+    
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {
+        print("Call - isMuted",muted)
+
+    }
+    
+    func call(_ call: NXMCall, didReceive error: Error) {
+        print("Call - Received Error",error)
+    }
+
     
 }
 

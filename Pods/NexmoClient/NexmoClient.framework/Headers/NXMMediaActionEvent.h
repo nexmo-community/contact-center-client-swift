@@ -8,7 +8,7 @@
 #import "NXMEvent.h"
 
 @interface NXMMediaActionEvent : NXMEvent
-@property (nonatomic, strong, nonnull) NSString *toMemberId;
+@property (nonatomic, strong, nonnull) NSString *toMemberUuid;
 @property (nonatomic) NXMMediaType mediaType;
 @property (nonatomic) NXMMediaActionType actionType;
 

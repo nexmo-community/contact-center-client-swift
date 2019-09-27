@@ -11,8 +11,9 @@
 #import "NXMMessageStatusEvent.h"
 #import "NXMMemberEvent.h"
 #import "NXMMediaEvent.h"
-#import "NXMSipEvent.h"
 #import "NXMMediaActionEvent.h"
 #import "NXMMediaSuspendEvent.h"
-#import "NXMRtcAnswerEvent.h"
 #import "NXMDTMFEvent.h"
+#import "NXMLegStatusEvent.h"
+#import "NXMCustomEvent.h"
+

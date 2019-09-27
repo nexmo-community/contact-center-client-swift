@@ -12,9 +12,8 @@
 
 @interface NXMMemberEvent : NXMEvent
 
-@property (nonatomic, copy, nonnull) NSString *memberId;
+@property (nonatomic, readonly, nonnull) NXMMember *member;
 @property (nonatomic) NXMMemberState state;
-@property (nonatomic, readonly, nonnull) NXMUser *user;
 @property (nonatomic, readonly, nullable) NXMMediaSettings *media;
 @property (nonatomic, readonly, nullable) NXMChannel *channel;
 @property (nonatomic, copy, nullable) NSString *knockingId;
