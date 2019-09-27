@@ -12,3 +12,4 @@ typedef void(^NXMSuccessCallbackWithId)(NSString * _Nullable value);
 typedef void(^NXMSuccessCallbackWithObject)(NSObject * _Nullable object);
 typedef void(^NXMSuccessCallbackWithObjects)(NSArray * _Nullable objects);
 typedef void(^NXMErrorCallback)(NSError * _Nullable error);
+typedef void(^NXMCompletionCallback)(NSError * _Nullable error);

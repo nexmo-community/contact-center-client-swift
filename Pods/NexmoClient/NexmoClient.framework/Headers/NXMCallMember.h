@@ -10,30 +10,29 @@
 #import "NXMChannel.h"
 
 typedef NS_ENUM(NSInteger, NXMCallMemberStatus) {
-    NXMCallMemberStatusDialling,
-    NXMCallMemberStatusCalling,
+    NXMCallMemberStatusRinging,
     NXMCallMemberStatusStarted,
     NXMCallMemberStatusAnswered,
-    NXMCallMemberStatusCancelled,
+    NXMCallMemberStatusCanceled,
+    NXMCallMemberStatusFailed,
+    NXMCallMemberStatusBusy,
+    NXMCallMemberStatusTimeout,
+    NXMCallMemberStatusRejected,
     NXMCallMemberStatusCompleted
 };
 
 @interface NXMCallMember : NSObject
 
-@property (nonatomic, copy, nonnull) NSString *callId;
 @property (nonatomic, copy, nonnull) NSString *memberId;
 @property (nonatomic, readonly, nonnull) NXMUser *user;
 @property (nonatomic, readonly, nullable) NXMChannel *channel;
-
 @property (nonatomic, readonly) BOOL isMuted;
 @property (nonatomic, readonly) NXMCallMemberStatus status;
 @property (nonatomic, copy, nonnull) NSString *statusDescription;
-@property (nonatomic, copy, nullable) NSString *metaInfo;
 
-- (void)hangup;
 - (void)hold:(BOOL)isHold;
 - (void)mute:(BOOL)isMute;
-- (void)earmuff:(BOOL)isEarmuff;
+- (void)earmuff:(BOOL) isEarmuff;
 
 @end
 

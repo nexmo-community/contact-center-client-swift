@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, NXMErrorCode) {
     NXMErrorCodeConversationRetrievalFailed,
     NXMErrorCodeConversationNotFound,
     NXMErrorCodeConversationInvalidMember,
+    NXMErrorCodeConversationExpired,
     
     NXMErrorCodeMediaNotSupported,
     NXMErrorCodeMediaNotFound,
@@ -51,6 +52,9 @@ typedef NS_ENUM(NSInteger, NXMErrorCode) {
     
     NXMErrorCodeNotImplemented,
     NXMErrorCodeMissingDelegate,
-    NXMErrorCodePayloadTooBig
+    NXMErrorCodePayloadTooBig,
     
+    NXMErrorCodeSDKDisconnected,
+    
+    NXMErrorCodeDTMFIllegal
 };

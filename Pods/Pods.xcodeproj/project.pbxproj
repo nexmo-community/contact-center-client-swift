@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -19,13 +19,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		31C896FD1108A6D963071466B0DBAC08 /* Pods-ContactCenter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FDA4B9FFADEB843138773BC445703 /* Pods-ContactCenter-dummy.m */; };
-		8D4BB9ABF8C74F8BB7F91423482E1328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		EF527141E85EFE218D9511FF6066E12F /* Pods-ContactCenter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C009C11303C960ECB6C854AA18FCC582 /* Pods-ContactCenter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DB7A0DBC8F5EF115A3567101CBFD0FA /* Pods-ContactCenter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C009C11303C960ECB6C854AA18FCC582 /* Pods-ContactCenter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		564F8D2178057F50071694BC55D97F4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		95F4D201C06A2C97D3E21034D1789C22 /* Pods-ContactCenter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FDA4B9FFADEB843138773BC445703 /* Pods-ContactCenter-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6B1484B6CD4D271D8549E7236726AEBB /* PBXContainerItemProxy */ = {
+		9AC6025BA1B615105E533693EAB22227 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -52,11 +52,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AEEC13E4992A7020D09C65CBA53B9E9B /* Frameworks */ = {
+		4FD9294E8C2B27D5065D1E7CB4166BE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D4BB9ABF8C74F8BB7F91423482E1328 /* Foundation.framework in Frameworks */,
+				564F8D2178057F50071694BC55D97F4E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,11 +161,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3CE63DAF9D02C6EF05FD44CDD66E69FD /* Headers */ = {
+		6488982E7387EE49B7B11370D6EE64B8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF527141E85EFE218D9511FF6066E12F /* Pods-ContactCenter-umbrella.h in Headers */,
+				2DB7A0DBC8F5EF115A3567101CBFD0FA /* Pods-ContactCenter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,17 +174,17 @@
 /* Begin PBXNativeTarget section */
 		BF77AE3441D472F4AF0C7BE2D3C14CBC /* Pods-ContactCenter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F8467A50FE294C641B6939F448E06EF /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */;
+			buildConfigurationList = 2B2FED179AC5E4248BAE4C7ACB08108F /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */;
 			buildPhases = (
-				3CE63DAF9D02C6EF05FD44CDD66E69FD /* Headers */,
-				7A8D658CC3BB15DDD29BE16424BCC7A4 /* Sources */,
-				AEEC13E4992A7020D09C65CBA53B9E9B /* Frameworks */,
-				58F7084699B0359B1E60A06A364B95C0 /* Resources */,
+				6488982E7387EE49B7B11370D6EE64B8 /* Headers */,
+				9F23DDCBDE919D45467D2B828FEF7067 /* Sources */,
+				4FD9294E8C2B27D5065D1E7CB4166BE3 /* Frameworks */,
+				2A60463C647B35927516B935E17BC077 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				412DDFEF70BB5548DC8F6A79D1ABB234 /* PBXTargetDependency */,
+				BB314B790FE7EF3AF09DF8EA322EFB73 /* PBXTargetDependency */,
 			);
 			name = "Pods-ContactCenter";
 			productName = "Pods-ContactCenter";
@@ -197,11 +197,11 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -219,7 +219,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		58F7084699B0359B1E60A06A364B95C0 /* Resources */ = {
+		2A60463C647B35927516B935E17BC077 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,22 +229,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7A8D658CC3BB15DDD29BE16424BCC7A4 /* Sources */ = {
+		9F23DDCBDE919D45467D2B828FEF7067 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31C896FD1108A6D963071466B0DBAC08 /* Pods-ContactCenter-dummy.m in Sources */,
+				95F4D201C06A2C97D3E21034D1789C22 /* Pods-ContactCenter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		412DDFEF70BB5548DC8F6A79D1ABB234 /* PBXTargetDependency */ = {
+		BB314B790FE7EF3AF09DF8EA322EFB73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NexmoClient;
 			target = E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */;
-			targetProxy = 6B1484B6CD4D271D8549E7236726AEBB /* PBXContainerItemProxy */;
+			targetProxy = 9AC6025BA1B615105E533693EAB22227 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -391,44 +391,6 @@
 			};
 			name = Release;
 		};
-		55BD81CCBFC0CAA04B5DC4E772311586 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AC67DEB0C7EAF921CC3714D52686676 /* Pods-ContactCenter.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		795DEB9255CA936B6D85903398AAB947 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */;
@@ -446,7 +408,7 @@
 			};
 			name = Debug;
 		};
-		80417D2E3702259F8B5491420928FB07 /* Release */ = {
+		DCB95DD09D9DD5F5A16E3A9D8DCABFA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4815E88CD473CFE136CA25FDECE6028 /* Pods-ContactCenter.release.xcconfig */;
 			buildSettings = {
@@ -485,23 +447,61 @@
 			};
 			name = Release;
 		};
+		F9911DEC435E66CF8F4254A3085D5C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC67DEB0C7EAF921CC3714D52686676 /* Pods-ContactCenter.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ContactCenter/Pods-ContactCenter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2B2FED179AC5E4248BAE4C7ACB08108F /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9911DEC435E66CF8F4254A3085D5C1D /* Debug */,
+				DCB95DD09D9DD5F5A16E3A9D8DCABFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */,
 				3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5F8467A50FE294C641B6939F448E06EF /* Build configuration list for PBXNativeTarget "Pods-ContactCenter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55BD81CCBFC0CAA04B5DC4E772311586 /* Debug */,
-				80417D2E3702259F8B5491420928FB07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

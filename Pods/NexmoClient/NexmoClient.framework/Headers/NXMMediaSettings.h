@@ -11,5 +11,4 @@
 @property bool isEnabled;
 @property bool isSuspended;
 
-- (instancetype)initWithEnabled:(BOOL)enabled suspend:(BOOL)suspend;
 @end

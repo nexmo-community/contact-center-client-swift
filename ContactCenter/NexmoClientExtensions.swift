@@ -50,20 +50,26 @@ extension NXMConnectionStatusReason {
 extension NXMCallMemberStatus {
     func description() -> String {
         switch self {
-        case .dialling:
-            return "Dialling"
-        case .calling:
-            return "Calling"
+        case .busy:
+            return "Busy"
+        case .ringing:
+            return "Ringing"
         case .started:
             return "Started"
         case .answered:
             return "Answered"
-        case .cancelled:
-            return "Cancelled"
+        case .canceled:
+            return "Canceled"
         case .completed:
             return "Completed"
+        case .failed:
+            return "Failed"
+        case .timeout:
+            return "Timeout"
+        case .rejected:
+            return "Rejected"
         @unknown default:
-            return "Unknown"
+            return ""
         }
     }
 }
