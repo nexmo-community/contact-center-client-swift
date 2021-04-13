@@ -1,3 +1,5 @@
+## ⚠️ This repository is no longer maintained. 
+
 Contact Center - The iOS Client (Swift)
 
 * clone this project
